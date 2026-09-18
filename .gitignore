@@ -3,3 +3,8 @@
 __pycache__/
 *.pyc
 *.tmp
+*.timestamp-*.mjs
+node_modules/
+.env
+.env.*
+.vscode/

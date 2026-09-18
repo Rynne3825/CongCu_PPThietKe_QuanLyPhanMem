@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   GLOBAL SMOOTHNESS - INTERACTIVE ELEMENTS
+   Áp dụng transition mượt mà mặc định cho tất cả tương tác
+========================================================= */
+button, a, input, select, textarea, .cursor-pointer {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Các phần tử đã có class transition riêng sẽ không bị ghi đè nếu định nghĩa cụ thể hơn */
+button:hover, a:hover {
+  transform: translateY(-1px);
+}
+button:active, a:active {
+  transform: translateY(1px);
+}
+
+/* =========================================================
+   GLOBAL VUE TRANSITIONS
+========================================================= */
+
+/* FADE */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+/* LIST TRANSITIONS (cho v-for) */
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.list-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+.list-leave-active {
+  position: absolute;
+}
